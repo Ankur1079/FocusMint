@@ -1016,7 +1016,11 @@ export const RelaxingMindGames: React.FC<RelaxingMindGamesProps> = ({
         {(['SUDOKU', 'CHESS', 'QUIZ', 'MEMORY'] as GameMode[]).map((mode) => {
           const isActive = activeGame === mode;
           const label = mode === 'SUDOKU' ? 'SUDOKU' : mode === 'CHESS' ? 'CHESS' : mode === 'QUIZ' ? 'BRAIN QUIZ' : 'MEMORY FLIP';
+<<<<<<< HEAD
           const modeIcon = mode === 'SUDOKU' ? <Grid3X3 className="w-4 h-4" /> : mode === 'CHESS' ? <Award className="w-4 h-4" /> : mode === 'QUIZ' ? <HelpCircle className="w-4 h-4" /> : <Brain className="w-4 h-4" />;
+=======
+          const modeIcon = mode === 'SUDOKU' ? <Grid3X3 className="w-3.5 h-3.5" /> : mode === 'CHESS' ? <Award className="w-3.5 h-3.5" /> : mode === 'QUIZ' ? <HelpCircle className="w-3.5 h-3.5" /> : <Brain className="w-3.5 h-3.5" />;
+>>>>>>> c81a0958240802c308a4ef1122d2b84cfb7cc5b4
           
           return (
             <button
@@ -1025,6 +1029,7 @@ export const RelaxingMindGames: React.FC<RelaxingMindGamesProps> = ({
                 audio.playClick();
                 setActiveGame(mode);
               }}
+<<<<<<< HEAD
               className={`p-3 rounded-xl border flex flex-row items-center justify-center gap-2 transition-all text-xs font-mono tracking-wider font-extrabold uppercase text-center shrink-0 cursor-pointer ${
                 isActive 
                   ? colorMode === 'LIGHT' ? 'bg-amber-100 text-amber-950 border-amber-350 shadow-sm font-extrabold' : 'bg-emerald-500/25 text-emerald-400 border-emerald-500/35 shadow shadow-emerald-500/10'
@@ -1033,6 +1038,16 @@ export const RelaxingMindGames: React.FC<RelaxingMindGamesProps> = ({
             >
               {modeIcon}
               <span className="text-xs font-sans font-bold select-none truncate">{label}</span>
+=======
+              className={`p-2 sm:p-3 rounded-xl border flex flex-row items-center justify-center gap-2 transition-all text-[9px] sm:text-[9.5px] font-mono tracking-widest font-black uppercase text-center shrink-0 cursor-pointer ${
+                isActive 
+                  ? colorMode === 'LIGHT' ? 'bg-amber-100 text-amber-900 border-amber-350 shadow-sm font-extrabold' : 'bg-emerald-500/25 text-emerald-400 border-emerald-500/35 shadow shadow-emerald-500/10'
+                  : colorMode === 'LIGHT' ? 'bg-white/40 border-slate-205 text-slate-500 hover:text-slate-800' : 'bg-zinc-950/20 border-white/5 text-slate-500 hover:text-slate-200'
+              }`}
+            >
+              {modeIcon}
+              <span className="text-[8px] sm:text-[9px] select-none truncate">{label}</span>
+>>>>>>> c81a0958240802c308a4ef1122d2b84cfb7cc5b4
             </button>
           );
         })}
@@ -1047,8 +1062,13 @@ export const RelaxingMindGames: React.FC<RelaxingMindGamesProps> = ({
         {activeGame === 'SUDOKU' && (
           <div className="flex flex-col gap-3">
             {/* Sudoku header / diff picker */}
+<<<<<<< HEAD
             <div className="flex flex-col sm:flex-row gap-2 justify-between items-center border-b pb-2.5 border-dashed border-slate-700/30">
               <span className="text-xs font-mono font-black tracking-widest text-emerald-600 dark:text-emerald-450 flex items-center gap-1.5 uppercase select-none">
+=======
+            <div className="flex flex-col sm:flex-row gap-2 justify-between items-center border-b pb-2 border-dashed border-slate-700/30">
+              <span className="text-[10px] font-mono font-bold tracking-widest text-emerald-555 flex items-center gap-1.5 uppercase select-none">
+>>>>>>> c81a0958240802c308a4ef1122d2b84cfb7cc5b4
                 🧩 ZEN SUDOKU MINDFULNESS
               </span>
               <div className="flex items-center gap-1.5">
@@ -1061,10 +1081,17 @@ export const RelaxingMindGames: React.FC<RelaxingMindGamesProps> = ({
                         audio.playClick();
                         setSudokuDifficulty(diff);
                       }}
+<<<<<<< HEAD
                       className={`px-3 py-1 rounded-lg text-xs font-mono font-bold border transition-all ${
                         isSel 
                           ? colorMode === 'LIGHT' 
                             ? 'bg-emerald-100 text-emerald-950 border-emerald-350 font-black shadow-sm' 
+=======
+                      className={`px-2 py-0.5 rounded text-[8.5px] font-mono border transition-all ${
+                        isSel 
+                          ? colorMode === 'LIGHT' 
+                            ? 'bg-emerald-100 text-emerald-800 border-emerald-350 font-black shadow-sm' 
+>>>>>>> c81a0958240802c308a4ef1122d2b84cfb7cc5b4
                             : 'bg-emerald-500/25 text-emerald-350 border-emerald-500/40 font-bold' 
                           : colorMode === 'LIGHT'
                             ? 'text-slate-500 hover:text-slate-800 border-transparent hover:bg-slate-100'
@@ -1122,7 +1149,11 @@ export const RelaxingMindGames: React.FC<RelaxingMindGamesProps> = ({
 
               {/* Sudoku input controls & verify */}
               <div className="flex flex-col gap-3 shrink-0 w-full max-w-[280px] xs:max-w-[310px] sm:max-w-[330px] md:w-36">
+<<<<<<< HEAD
                 <span className="text-xs font-mono text-slate-500 text-center md:text-left tracking-wide">ENTER OR UPDATE NUMBER:</span>
+=======
+                <span className="text-[7.5px] font-mono text-slate-500 text-center md:text-left tracking-wide">ENTER OR UPDATE NUMBER:</span>
+>>>>>>> c81a0958240802c308a4ef1122d2b84cfb7cc5b4
                 <div className="grid grid-cols-5 gap-1 justify-center">
                   {[1, 2, 3, 4, 5, 6, 7, 8, 9].map((num) => {
                     const btnClass = colorMode === 'LIGHT'
@@ -1143,7 +1174,11 @@ export const RelaxingMindGames: React.FC<RelaxingMindGamesProps> = ({
                   <button
                     onClick={() => handleSudokuNumberInput(0)}
                     disabled={!sudokuSelectedCell}
+<<<<<<< HEAD
                     className={`aspect-square rounded text-xs font-mono uppercase flex items-center justify-center cursor-pointer transition-all active:scale-95 disabled:opacity-30 ${
+=======
+                    className={`aspect-square rounded text-[8px] font-mono uppercase flex items-center justify-center cursor-pointer transition-all active:scale-95 disabled:opacity-30 ${
+>>>>>>> c81a0958240802c308a4ef1122d2b84cfb7cc5b4
                       colorMode === 'LIGHT'
                         ? 'bg-rose-100 hover:bg-rose-200 text-rose-800 border border-rose-200/80'
                         : 'bg-rose-500/15 hover:bg-rose-500/30 text-rose-450 border border-rose-500/10'
@@ -1157,13 +1192,21 @@ export const RelaxingMindGames: React.FC<RelaxingMindGamesProps> = ({
                 <div className="flex gap-1.5 mt-2">
                   <button
                     onClick={() => loadSudoku(sudokuDifficulty)}
+<<<<<<< HEAD
                     className="flex-grow py-1.5 px-2 text-xs font-mono font-bold bg-slate-500/10 rounded border border-white/5 text-slate-400 hover:text-white flex items-center justify-center gap-1 active:scale-95 transition-all"
+=======
+                    className="flex-grow py-1.5 px-2 text-[9px] font-mono font-bold bg-slate-500/10 rounded border border-white/5 text-slate-400 hover:text-white flex items-center justify-center gap-1 active:scale-95 transition-all"
+>>>>>>> c81a0958240802c308a4ef1122d2b84cfb7cc5b4
                   >
                     <RefreshCw className="w-2.5 h-2.5" /> RESET
                   </button>
                   <button
                     onClick={handleCheckSudoku}
+<<<<<<< HEAD
                     className="flex-grow py-1.5 px-2 text-xs font-mono font-bold bg-emerald-600 hover:bg-emerald-500 text-slate-950 rounded flex items-center justify-center gap-1 font-black cursor-pointer shadow active:scale-95 transition-all"
+=======
+                    className="flex-grow py-1.5 px-2 text-[9px] font-mono font-bold bg-emerald-600 hover:bg-emerald-500 text-slate-950 rounded flex items-center justify-center gap-1 font-black cursor-pointer shadow active:scale-95 transition-all"
+>>>>>>> c81a0958240802c308a4ef1122d2b84cfb7cc5b4
                   >
                     <Check className="w-2.5 h-2.5" /> CHECK
                   </button>
@@ -1173,7 +1216,11 @@ export const RelaxingMindGames: React.FC<RelaxingMindGamesProps> = ({
 
             {/* Alert banner */}
             {sudokuAlert && (
+<<<<<<< HEAD
               <div className={`p-2.5 rounded-lg border text-xs font-mono flex items-center gap-1.5 ${
+=======
+              <div className={`p-2.5 rounded-lg border text-[9.5px] font-mono flex items-center gap-1.5 ${
+>>>>>>> c81a0958240802c308a4ef1122d2b84cfb7cc5b4
                 sudokuCompleted ? 'bg-emerald-500/10 text-emerald-400 border-emerald-500/20' : 'bg-red-500/10 text-red-400 border-red-500/20'
               }`}>
                 {sudokuCompleted ? <Trophy className="w-3.5 h-3.5" /> : <AlertCircle className="w-3.5 h-3.5" />}
@@ -1189,12 +1236,20 @@ export const RelaxingMindGames: React.FC<RelaxingMindGamesProps> = ({
         {activeGame === 'CHESS' && (
           <div className="flex flex-col gap-3">
             <div className="flex justify-between items-center border-b pb-2 border-dashed border-slate-700/30">
+<<<<<<< HEAD
               <span className="text-xs font-mono font-bold tracking-widest text-sky-400 flex items-center gap-1.5 uppercase select-none">
+=======
+              <span className="text-[10px] font-mono font-bold tracking-widest text-sky-400 flex items-center gap-1.5 uppercase select-none">
+>>>>>>> c81a0958240802c308a4ef1122d2b84cfb7cc5b4
                 👑 CHESS MIND COGNITIVE CORE
               </span>
               <button
                 onClick={resetChess}
+<<<<<<< HEAD
                 className="text-xs font-mono px-2 py-0.5 rounded bg-slate-500/10 hover:bg-slate-500/25 border border-white/5 text-slate-400 hover:text-white transition-all cursor-pointer"
+=======
+                className="text-[9px] font-mono px-2 py-0.5 rounded bg-slate-500/10 hover:bg-slate-500/25 border border-white/5 text-slate-400 hover:text-white transition-all cursor-pointer"
+>>>>>>> c81a0958240802c308a4ef1122d2b84cfb7cc5b4
               >
                 RESTART MATCH
               </button>
@@ -1204,9 +1259,15 @@ export const RelaxingMindGames: React.FC<RelaxingMindGamesProps> = ({
             <div className="grid grid-cols-1 md:grid-cols-12 gap-4 items-center md:items-stretch py-1.5 flex-col md:flex-row">
               
               {/* Captured dashboard / stats */}
+<<<<<<< HEAD
               <div className="md:col-span-3 order-2 md:order-1 grid grid-cols-2 md:grid-cols-1 gap-2 font-mono text-xs w-full">
                 <div className={`p-2.5 rounded-xl space-y-1.5 border ${subPanelBg}`}>
                   <span className="text-slate-500 uppercase font-bold text-xs block">MATCH STATUS</span>
+=======
+              <div className="md:col-span-3 order-2 md:order-1 grid grid-cols-2 md:grid-cols-1 gap-2 font-mono text-[9px] w-full">
+                <div className={`p-2.5 rounded-xl space-y-1.5 border ${subPanelBg}`}>
+                  <span className="text-slate-500 uppercase font-bold text-[7.5px] block">MATCH STATUS</span>
+>>>>>>> c81a0958240802c308a4ef1122d2b84cfb7cc5b4
                   <div className="flex justify-between items-center gap-1">
                     <span>YOUR SIDE:</span>
                     <span className="text-sky-450 font-bold flex items-center gap-1"><User className="w-2.5 h-2.5 shrink-0" /> WHITE</span>
@@ -1217,14 +1278,22 @@ export const RelaxingMindGames: React.FC<RelaxingMindGamesProps> = ({
                   </div>
                   <div className="flex justify-between items-center pt-1 border-t border-slate-500/10 gap-1">
                     <span>TURN:</span>
+<<<<<<< HEAD
                     <span className={`font-black p-0.5 px-1 bg-white/5 rounded text-xs truncate ${chessTurn === 'w' ? 'text-sky-400 animate-pulse' : 'text-red-400'}`}>
+=======
+                    <span className={`font-black p-0.5 px-1 bg-white/5 rounded text-[8px] truncate ${chessTurn === 'w' ? 'text-sky-400 animate-pulse' : 'text-red-400'}`}>
+>>>>>>> c81a0958240802c308a4ef1122d2b84cfb7cc5b4
                       {chessTurn === 'w' ? 'YOURS (W)' : 'AI THINKING...'}
                     </span>
                   </div>
                 </div>
 
                 <div className={`p-2.5 rounded-xl border ${subPanelBg} overflow-hidden max-h-36`}>
+<<<<<<< HEAD
                   <span className="text-slate-500 uppercase font-black text-xs block mb-1">CAPTURED MATES</span>
+=======
+                  <span className="text-slate-500 uppercase font-black text-[7px] block mb-1">CAPTURED MATES</span>
+>>>>>>> c81a0958240802c308a4ef1122d2b84cfb7cc5b4
                   <div className="space-y-1 select-none animate-fade-in">
                     <div className="flex justify-between items-center border-b border-white/5 pb-1">
                       <span className="text-white">BY WHITE:</span>
@@ -1310,18 +1379,30 @@ export const RelaxingMindGames: React.FC<RelaxingMindGamesProps> = ({
                         }`}>
                           {chessWinner === 'w' ? 'VICTORY!' : 'DEFEAT!'}
                         </h4>
+<<<<<<< HEAD
                         <p className="text-xs text-slate-300 font-mono mt-1 leading-normal">
+=======
+                        <p className="text-[9px] text-slate-300 font-mono mt-1 leading-normal">
+>>>>>>> c81a0958240802c308a4ef1122d2b84cfb7cc5b4
                           {chessWinner === 'w' 
                             ? 'You have captured the AI\'s King!' 
                             : 'The AI has captured your King!'}
                         </p>
                       </div>
+<<<<<<< HEAD
                       <div className="bg-white/5 border border-white/5 px-2 py-1 rounded text-slate-400 font-mono text-xs tracking-wide w-full border-white/5">
+=======
+                      <div className="bg-white/5 border border-white/5 px-2 py-1 rounded text-slate-400 font-mono text-[8px] tracking-wide w-full">
+>>>>>>> c81a0958240802c308a4ef1122d2b84cfb7cc5b4
                         {restartCountdown !== null ? `Auto-restart in ${restartCountdown}s...` : 'Restarting game...'}
                       </div>
                       <button
                         onClick={resetChess}
+<<<<<<< HEAD
                         className="w-full text-center py-1 px-3 rounded text-black bg-gradient-to-r from-amber-400 to-amber-300 hover:brightness-110 active:scale-95 font-mono text-xs font-black tracking-widest uppercase select-none transition-all cursor-pointer shadow-md"
+=======
+                        className="w-full text-center py-1 px-3 rounded text-black bg-gradient-to-r from-amber-400 to-amber-300 hover:brightness-110 active:scale-95 font-mono text-[8.5px] font-black tracking-widest uppercase select-none transition-all cursor-pointer shadow-md"
+>>>>>>> c81a0958240802c308a4ef1122d2b84cfb7cc5b4
                       >
                         RESTART NOW
                       </button>
@@ -1332,8 +1413,13 @@ export const RelaxingMindGames: React.FC<RelaxingMindGamesProps> = ({
 
               {/* Move Logs terminal */}
               <div className="md:col-span-3 order-3 md:order-3 flex flex-col border border-slate-700/20 rounded-xl p-2 bg-[#090d16]/30 overflow-hidden h-40 w-full animate-fade-in">
+<<<<<<< HEAD
                 <span className="text-xs font-mono text-slate-500 font-black tracking-widest uppercase mb-1.5 block">MOVE LOGS TIMEOUT</span>
                 <div className="flex-grow overflow-y-auto space-y-1 font-mono text-xs tracking-tight text-slate-400 select-none">
+=======
+                <span className="text-[7.5px] font-mono text-slate-500 font-black tracking-widest uppercase mb-1.5 block">MOVE LOGS TIMEOUT</span>
+                <div className="flex-grow overflow-y-auto space-y-1 font-mono text-[8px] tracking-tight text-slate-400 select-none">
+>>>>>>> c81a0958240802c308a4ef1122d2b84cfb7cc5b4
                   {chessLogs.map((log, index) => (
                     <div key={index} className="flex gap-1 items-start leading-tight">
                       <span className="text-slate-600">&gt;</span>
@@ -1354,10 +1440,17 @@ export const RelaxingMindGames: React.FC<RelaxingMindGamesProps> = ({
           <div className="flex flex-col gap-3">
             {/* Quiz Title & topic pickers */}
             <div className="flex justify-between items-center border-b pb-2 border-dashed border-slate-700/30">
+<<<<<<< HEAD
               <span className="text-xs font-mono font-bold tracking-widest text-[#0ea5e9]">
                 💡 LATERAL MIND TRIVIA SHIELD
               </span>
               <div className="flex items-center gap-1 font-mono text-xs">
+=======
+              <span className="text-[10px] font-mono font-bold tracking-widest text-[#0ea5e9]">
+                💡 LATERAL MIND TRIVIA SHIELD
+              </span>
+              <div className="flex items-center gap-1 font-mono text-[8.5px]">
+>>>>>>> c81a0958240802c308a4ef1122d2b84cfb7cc5b4
                 {(['LOGIC', 'SCIENCE', 'PATTERN'] as const).map((topic) => (
                   <button
                     key={topic}
@@ -1384,7 +1477,11 @@ export const RelaxingMindGames: React.FC<RelaxingMindGamesProps> = ({
                 </p>
                 <button
                   onClick={() => handleResetQuiz(quizTopic)}
+<<<<<<< HEAD
                   className={`mt-3 px-3 py-1.5 text-xs font-mono font-black border tracking-widest rounded-lg transition-all active:scale-95 cursor-pointer ${
+=======
+                  className={`mt-3 px-3 py-1.5 text-[9.5px] font-mono font-black border tracking-widest rounded-lg transition-all active:scale-95 cursor-pointer ${
+>>>>>>> c81a0958240802c308a4ef1122d2b84cfb7cc5b4
                     colorMode === 'LIGHT'
                       ? 'bg-emerald-50 text-emerald-800 border-emerald-300 hover:bg-emerald-100'
                       : 'bg-emerald-500/10 text-emerald-400 border-emerald-500/30 hover:bg-emerald-500/20'
@@ -1395,7 +1492,11 @@ export const RelaxingMindGames: React.FC<RelaxingMindGamesProps> = ({
               </div>
             ) : (
               <div className="space-y-4 py-1 flex flex-col">
+<<<<<<< HEAD
                 <div className="flex justify-between items-center text-xs font-mono text-slate-500">
+=======
+                <div className="flex justify-between items-center text-[8px] font-mono text-slate-500">
+>>>>>>> c81a0958240802c308a4ef1122d2b84cfb7cc5b4
                   <span>TOPIC: {quizTopic} SEC</span>
                   <span className="tabular-nums">QUESTION: {currentQIndex + 1} / {activeQuestions.length}</span>
                 </div>
@@ -1443,9 +1544,15 @@ export const RelaxingMindGames: React.FC<RelaxingMindGamesProps> = ({
                         key={optIdx}
                         onClick={() => handleOptionSelect(optIdx)}
                         disabled={quizChecked}
+<<<<<<< HEAD
                         className={`p-2.5 sm:p-3 text-xs font-mono rounded-xl border text-left flex items-start gap-2.5 transition-all select-none cursor-pointer group hover:scale-101 outline-none ${btnClass}`}
                       >
                         <span className="h-4 w-4 rounded-full bg-slate-500/10 text-slate-500 text-xs font-mono flex items-center justify-center shrink-0">
+=======
+                        className={`p-2.5 sm:p-3 text-[11px] font-mono rounded-xl border text-left flex items-start gap-2.5 transition-all select-none cursor-pointer group hover:scale-101 outline-none ${btnClass}`}
+                      >
+                        <span className="h-4 w-4 rounded-full bg-slate-500/10 text-slate-500 text-[8.5px] font-mono flex items-center justify-center shrink-0">
+>>>>>>> c81a0958240802c308a4ef1122d2b84cfb7cc5b4
                           {String.fromCharCode(65 + optIdx)}
                         </span>
                         <span className="leading-tight select-none">{opt}</span>
@@ -1456,7 +1563,11 @@ export const RelaxingMindGames: React.FC<RelaxingMindGamesProps> = ({
 
                 {/* Action button */}
                 <div className="flex justify-between items-center pt-2 gap-3">
+<<<<<<< HEAD
                   <div className="text-xs font-mono leading-tight max-w-[70%] select-none">
+=======
+                  <div className="text-[9px] font-mono leading-tight max-w-[70%] select-none">
+>>>>>>> c81a0958240802c308a4ef1122d2b84cfb7cc5b4
                     {quizChecked ? (
                       <span className="text-slate-450">{activeQuestions[currentQIndex]?.explanation}</span>
                     ) : (
@@ -1492,10 +1603,17 @@ export const RelaxingMindGames: React.FC<RelaxingMindGamesProps> = ({
         {activeGame === 'MEMORY' && (
           <div className="flex flex-col gap-3">
             <div className="flex flex-col sm:flex-row gap-2 justify-between items-center border-b pb-2 border-dashed border-slate-700/30">
+<<<<<<< HEAD
               <span className="text-xs font-mono font-bold tracking-widest text-[#0ea5e9] flex items-center gap-1.5 uppercase select-none">
                 🧠 MINDFULNESS MEMORY MATRIX
               </span>
               <div className="flex items-center gap-3 sm:gap-4 text-xs font-mono">
+=======
+              <span className="text-[10px] font-mono font-bold tracking-widest text-[#0ea5e9] flex items-center gap-1.5 uppercase select-none">
+                🧠 MINDFULNESS MEMORY MATRIX
+              </span>
+              <div className="flex items-center gap-3 sm:gap-4 text-[9px] font-mono">
+>>>>>>> c81a0958240802c308a4ef1122d2b84cfb7cc5b4
                 <span className="tabular-nums">MOVES: {memoryMoves}</span>
                 <span className={`tabular-nums font-black ${colorMode === 'LIGHT' ? 'text-emerald-700' : 'text-emerald-450'}`}>MATCHED: {memoryMatchedCount} / 8</span>
                 <button
@@ -1517,7 +1635,11 @@ export const RelaxingMindGames: React.FC<RelaxingMindGamesProps> = ({
                 </p>
                 <button
                   onClick={initMemoryGame}
+<<<<<<< HEAD
                   className={`mt-3 px-3 py-1.5 text-xs font-mono font-black border tracking-widest rounded-lg transition-all active:scale-95 cursor-pointer ${
+=======
+                  className={`mt-3 px-3 py-1.5 text-[9.5px] font-mono font-black border tracking-widest rounded-lg transition-all active:scale-95 cursor-pointer ${
+>>>>>>> c81a0958240802c308a4ef1122d2b84cfb7cc5b4
                     colorMode === 'LIGHT'
                       ? 'bg-sky-50 text-sky-850 border-sky-300 hover:bg-sky-100'
                       : 'bg-[#0ea5e9]/20 text-[#0ea5e9] border-[#0ea5e9]/30 hover:bg-[#0ea5e9]/30'
@@ -1542,8 +1664,13 @@ export const RelaxingMindGames: React.FC<RelaxingMindGamesProps> = ({
                               ? 'bg-amber-50 border-amber-300 text-amber-950 shadow-inner text-[1.4rem] rotate-0 shadow scale-102' 
                               : 'bg-emerald-500/15 border-emerald-500/30 text-emerald-300 shadow-inner text-[1.4rem] rotate-0 shadow scale-102' 
                             : colorMode === 'LIGHT' 
+<<<<<<< HEAD
                               ? 'bg-slate-100 hover:bg-slate-205 border-slate-250 text-slate-400 text-xs sm:text-xs' 
                               : 'bg-[#ffffff06] hover:bg-white/10 hover:border-slate-700 border-white/5 text-slate-500 text-xs sm:text-xs'
+=======
+                              ? 'bg-slate-100 hover:bg-slate-205 border-slate-250 text-slate-400 text-[11px] sm:text-xs' 
+                              : 'bg-[#ffffff06] hover:bg-white/10 hover:border-slate-700 border-white/5 text-slate-500 text-[11px] sm:text-xs'
+>>>>>>> c81a0958240802c308a4ef1122d2b84cfb7cc5b4
                           }
                           ${card.isMatched ? 'opacity-60 border-emerald-500/30' : ''}
                         `}

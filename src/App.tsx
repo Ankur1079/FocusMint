@@ -55,6 +55,10 @@ export default function App() {
 
   // Seasons variables matching user requirements
   const [season, setSeason] = useState<SeasonTheme>('RAINY');
+<<<<<<< HEAD
+=======
+  const [colorMode, setColorMode] = useState<ColorMode>('DARK');
+>>>>>>> c81a0958240802c308a4ef1122d2b84cfb7cc5b4
 
   const handleRegisterActivity = () => {
     setActivityTicks((ticks) => ticks + 1);
@@ -90,7 +94,11 @@ export default function App() {
   };
 
   return (
+<<<<<<< HEAD
     <div className="relative w-screen h-screen transition-colors duration-700 overflow-hidden flex flex-col items-center justify-center select-none font-sans bg-[#f1f5f9]">
+=======
+    <div className={`relative w-screen h-screen transition-colors duration-700 overflow-hidden flex flex-col items-center justify-center select-none font-sans ${colorMode === 'LIGHT' ? 'bg-[#f1f5f9]' : 'bg-[#010409]'}`}>
+>>>>>>> c81a0958240802c308a4ef1122d2b84cfb7cc5b4
       
       {/* INJECT ANIMATION KEYFRAMES SAFELY VIA CORE JSX STYLES */}
       <style>{`
@@ -142,7 +150,11 @@ export default function App() {
       <AnimatePresence mode="wait">
         {theme === 'COZY_DESK' && (
           <motion.div
+<<<<<<< HEAD
             key={`leaf_${season}`}
+=======
+            key={`leaf_${season}_${colorMode}`}
+>>>>>>> c81a0958240802c308a4ef1122d2b84cfb7cc5b4
             initial={{ opacity: 0, scale: 1.01 }}
             animate={{ opacity: 1.0, scale: 1 }}
             exit={{ opacity: 0 }}
@@ -154,12 +166,31 @@ export default function App() {
               src={getSeasonWallpaper()} 
               alt={`${season} Season Leaf Wallpaper`}
               referrerPolicy="no-referrer"
+<<<<<<< HEAD
               className="w-full h-full object-cover scale-102 transition-all duration-1000 ease-out brightness-[1.0] contrast-[1.05] saturate-[1.2]"
             />
             
             {/* Organic Vignette Mask styled perfectly for Noon (LIGHT) Theme */}
             <div className="absolute inset-0 bg-radial from-transparent via-[#f8fafc]/20 to-[#f1f5f9]/70" />
             <div className="absolute inset-0 bg-gradient-to-t from-[#f1f5f9] via-transparent to-transparent opacity-60" />
+=======
+              className={`w-full h-full object-cover scale-102 transition-all duration-1000 ease-out 
+                ${colorMode === 'LIGHT' ? 'brightness-[1.0] contrast-[1.05] saturate-[1.2]' : 'brightness-[0.62] contrast-[1.15] saturate-[1.12]'}`}
+            />
+            
+            {/* Organic Vignette Mask adapting perfectly to Light Theme vs Dark Theme */}
+            {colorMode === 'LIGHT' ? (
+              <>
+                <div className="absolute inset-0 bg-radial from-transparent via-[#f8fafc]/20 to-[#f1f5f9]/70" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#f1f5f9] via-transparent to-transparent opacity-60" />
+              </>
+            ) : (
+              <>
+                <div className="absolute inset-0 bg-radial from-transparent via-[#010409]/30 to-[#010409]/80" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#010409] via-transparent to-transparent opacity-60" />
+              </>
+            )}
+>>>>>>> c81a0958240802c308a4ef1122d2b84cfb7cc5b4
 
             {/* 1. SUMMER SEASON SUNLIGHT WEATHER EFFECT */}
             {season === 'SUMMER' && (
@@ -277,6 +308,7 @@ export default function App() {
               src="https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?auto=format&fit=crop&w=1920&q=80" 
               alt="Serene Zen Forest Pathway"
               referrerPolicy="no-referrer"
+<<<<<<< HEAD
               className="w-full h-full object-cover scale-102 transition-all duration-1000 ease-out brightness-[1.0] contrast-[1.05] saturate-[1.15]"
             />
             
@@ -287,6 +319,28 @@ export default function App() {
             {/* CURSIVE SOOTHING TEXT: "A quiet mind is a creative mind." */}
             <div className="absolute top-[18%] left-0 right-0 flex justify-center px-4 w-full text-center">
               <h2 className="font-script text-3xl sm:text-4xl md:text-[54px] tracking-widest font-normal italic drop-shadow-[0_2px_12px_rgba(255,255,255,0.8)] max-w-xl mx-auto leading-normal select-none pointer-events-none text-slate-805/85">
+=======
+              className={`w-full h-full object-cover scale-102 transition-all duration-1000 ease-out 
+                ${colorMode === 'LIGHT' ? 'brightness-[1.0] contrast-[1.05] saturate-[1.15]' : 'brightness-[0.72] contrast-[1.15] saturate-[0.98]'}`}
+            />
+            
+            {/* Ambient Soft Overlay to ensure text readability */}
+            {colorMode === 'LIGHT' ? (
+              <>
+                <div className="absolute inset-0 bg-gradient-to-b from-[#f1f5f9]/25 via-[#f1f5f9]/10 to-[#f1f5f9]/40" />
+                <div className="absolute inset-0 bg-radial from-transparent via-[#f8fafc]/15 to-[#f1f5f9]/50" />
+              </>
+            ) : (
+              <>
+                <div className="absolute inset-0 bg-gradient-to-b from-[#010409]/30 via-[#010409]/15 to-[#010409]/50" />
+                <div className="absolute inset-0 bg-radial from-transparent via-[#010409]/20 to-[#010409]/60" />
+              </>
+            )}
+
+            {/* CURSIVE SOOTHING TEXT: "A quiet mind is a creative mind." */}
+            <div className="absolute top-[18%] left-0 right-0 flex justify-center px-4 w-full text-center">
+              <h2 className={`font-script text-3xl sm:text-4xl md:text-[54px] tracking-widest font-normal italic drop-shadow-[0_4px_24px_rgba(0,0,0,0.85)] max-w-xl mx-auto leading-normal select-none pointer-events-none ${colorMode === 'LIGHT' ? 'text-black/60' : 'text-white/65'}`}>
+>>>>>>> c81a0958240802c308a4ef1122d2b84cfb7cc5b4
                 A quiet mind is a creative mind.
               </h2>
             </div>
@@ -366,13 +420,24 @@ export default function App() {
               onExit={handleReturnGate}
               season={season}
               setSeason={setSeason}
+<<<<<<< HEAD
+=======
+              colorMode={colorMode}
+              setColorMode={setColorMode}
+>>>>>>> c81a0958240802c308a4ef1122d2b84cfb7cc5b4
             />
           </motion.div>
         )}
       </AnimatePresence>
 
       {/* AMBIENT SHADOW OVERLAYS FOR COZY ROOM EDGES */}
+<<<<<<< HEAD
       <div className="absolute inset-0 pointer-events-none transition-colors duration-700 z-0 bg-radial from-transparent via-transparent to-[#f1f5f9]/25" />
+=======
+      <div className={`absolute inset-0 pointer-events-none transition-colors duration-700 z-0
+        ${colorMode === 'LIGHT' ? 'bg-radial from-transparent via-transparent to-[#f1f5f9]/25' : 'bg-radial from-transparent via-transparent to-[#010409]/90'}`} 
+      />
+>>>>>>> c81a0958240802c308a4ef1122d2b84cfb7cc5b4
     </div>
   );
 }
