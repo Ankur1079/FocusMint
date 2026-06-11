@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cinzel:wght@400;600;700&family=JetBrains+Mono:wght@300;400;500;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", ui-serif, Georgia, serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  --font-script: "Alex Brush", cursive;
+}
+
+@layer utilities {
+  .cyber-grid {
+    background-image: 
+      linear-gradient(to right, rgba(245, 158, 11, 0.02) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(245, 158, 11, 0.02) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+  
+  .racetrack-grid {
+    background-image: 
+      linear-gradient(to right, rgba(14, 165, 233, 0.03) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(14, 165, 233, 0.03) 1px, transparent 1px);
+    background-size: 50px 50px;
+  }
+
+  .warm-lamp-glow {
+    box-shadow: 0 0 80px rgba(245, 158, 11, 0.12), inset 0 0 40px rgba(245, 158, 11, 0.03);
+  }
+
+  .neon-cyber-glow {
+    box-shadow: 0 0 50px rgba(14, 165, 233, 0.15), inset 0 0 20px rgba(14, 165, 233, 0.05);
+  }
+  
+  .coffee-steam {
+    filter: blur(4px);
+    animation: floating-steam 5s ease-in-out infinite;
+  }
+}
+
+@keyframes floating-steam {
+  0% { transform: translateY(0) scaleX(1); opacity: 0; }
+  30% { opacity: 0.5; }
+  60% { transform: translateY(-30px) scaleX(1.4); opacity: 0.15; }
+  100% { transform: translateY(-50px) scaleX(2); opacity: 0; }
+}
+
+/* Custom cyber scanner line effect for the speed pre-loader */
+.racetrack-sweep {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, rgba(239, 68, 68, 0.4), transparent);
+  animation: sweep-down 5s linear infinite;
+}
+
+@keyframes sweep-down {
+  0% { transform: translateY(-10%); }
+  100% { transform: translateY(110vh); }
+}

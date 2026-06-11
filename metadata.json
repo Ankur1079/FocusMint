@@ -1,0 +1,8 @@
+{
+  "name": "Speed and Deep Focus Suite",
+  "description": "An interactive motivational study dashboard. Combines a 3D customizable background, a Pomodoro timer, synthesized rain ambiance, daily checklist notebooks, custom brain games (Chess, Sudoku, Quiz), and classic Zen guide summaries to cultivate a relaxed mind.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
