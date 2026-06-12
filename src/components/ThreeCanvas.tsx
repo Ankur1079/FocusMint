@@ -226,11 +226,7 @@ export const ThreeCanvas: React.FC<ThreeCanvasProps> = ({
     // Position it tilted down as if mounted from a left-side desk lamp
     lampBeam.position.set(-2.4, 2.3, -1.2);
     lampBeam.rotation.set(0, 0, -0.45); // angles beam across center-right desk area
-<<<<<<< HEAD
     // scene.add(lampBeam); // DESK LAMP GLOW REMOVED
-=======
-    scene.add(lampBeam);
->>>>>>> c81a0958240802c308a4ef1122d2b84cfb7cc5b4
     lampBeamRef.current = lampBeam;
 
 
@@ -273,19 +269,11 @@ export const ThreeCanvas: React.FC<ThreeCanvasProps> = ({
 
     window.addEventListener('resize', handleResize);
 
-<<<<<<< HEAD
     const startTime = performance.now();
     let tickId: number;
 
     const tick = () => {
       const elapsed = (performance.now() - startTime) / 1000;
-=======
-    const clock = new THREE.Clock();
-    let tickId: number;
-
-    const tick = () => {
-      const elapsed = clock.getElapsedTime();
->>>>>>> c81a0958240802c308a4ef1122d2b84cfb7cc5b4
 
       // Intersect cursor coordinates slowly for parallax depth
       mouse.current.x += (mouse.current.targetX - mouse.current.x) * 0.06;

@@ -75,10 +75,7 @@ export const DeviceAudioPlayer: React.FC<DeviceAudioPlayerProps> = ({
   const [volume, setVolume] = useState(70);
   const [isMuted, setIsMuted] = useState(false);
   const [activePresetIndex, setActivePresetIndex] = useState<number | null>(null);
-<<<<<<< HEAD
   const [playbackRate, setPlaybackRate] = useState<number>(1.0);
-=======
->>>>>>> c81a0958240802c308a4ef1122d2b84cfb7cc5b4
 
   // Simulated visualizer heights
   const [visualizerHeights, setVisualizerHeights] = useState<number[]>(Array(16).fill(15));
@@ -132,7 +129,6 @@ export const DeviceAudioPlayer: React.FC<DeviceAudioPlayerProps> = ({
     }
   }, [volume, isMuted]);
 
-<<<<<<< HEAD
   // Update playback speed rate dynamically (with event listeners to override default resets on some devices)
   useEffect(() => {
     if (audioRef.current) {
@@ -140,8 +136,6 @@ export const DeviceAudioPlayer: React.FC<DeviceAudioPlayerProps> = ({
     }
   }, [playbackRate, isPlaying, trackSourceType, trackName]);
 
-=======
->>>>>>> c81a0958240802c308a4ef1122d2b84cfb7cc5b4
   // Audio Equalizer Visualizer animation loop
   useEffect(() => {
     let animationFrameId: number;
@@ -249,7 +243,6 @@ export const DeviceAudioPlayer: React.FC<DeviceAudioPlayerProps> = ({
 
   return (
     <div className={`${panelBg} rounded-2xl p-4 sm:p-5 flex flex-col gap-4 relative overflow-hidden transition-all duration-300 mt-4`}>
-<<<<<<< HEAD
       {/* Modern, non-overlapping section header details consistent with the rest of the design */}
       <div className="space-y-1">
         <span className="text-xs font-mono text-slate-500 tracking-wider uppercase block select-none">
@@ -395,79 +388,10 @@ export const DeviceAudioPlayer: React.FC<DeviceAudioPlayerProps> = ({
                   <div className="w-1 h-1 rounded-full bg-zinc-950" />
                 </div>
               </motion.div>
-=======
-      {/* Decorative Vintage audio banner accent */}
-      <div className="absolute top-0 right-0 p-1.5 border-b border-l text-[8px] font-mono tracking-widest uppercase bg-teal-500/10 border-teal-500/20 text-teal-600 font-extrabold flex items-center gap-1">
-        <Sparkles className="w-2.5 h-2.5 text-teal-500 animate-pulse" /> DUAL CHANNEL DIRECT DRIVE RECORDER
-      </div>
-
-      <div className="flex flex-col md:flex-row gap-5 items-stretch">
-        
-        {/* PHYSICAL 80S RETRO TAPE CASSETTE */}
-        <div className={`w-full md:w-80 rounded-xl relative p-4 flex flex-col justify-between border select-none overflow-hidden h-44 ${subPanelBg}`}>
-          {/* Subtle metallic reflection */}
-          <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rotate-45 pointer-events-none -translate-y-8 translate-x-8 blur-md" />
-
-          {/* Cassette Top notches */}
-          <div className="flex justify-between px-6 -mt-4 text-[7px] font-mono opacity-50">
-            <span>A</span>
-            <span>STEREO REC</span>
-            <span>B</span>
-          </div>
-
-          <div className="bg-amber-400 text-zinc-950 px-2 py-0.5 rounded text-[8px] font-mono uppercase font-bold tracking-wider text-center mt-1 truncate">
-            {trackSourceType === "NONE" 
-              ? "DEVICE PLAYER : CHOOSE SOURCE" 
-              : `${trackSourceType === "DEVICE" ? "DEVICE FILE" : "PRESET MIX"} : ${trackName}`}
-          </div>
-
-          {/* DUAL SPINNING REELS AREA */}
-          <div className="flex justify-center items-center gap-10 my-2 relative">
-            
-            {/* Spinning Reel Left */}
-            <div className="relative">
-              <motion.div 
-                animate={{ rotate: isPlaying ? 360 : 0 }}
-                transition={{ repeat: Infinity, duration: 4, ease: "linear" }}
-                className={`w-14 h-14 rounded-full border-4 border-dashed relative flex items-center justify-center ${colorMode === 'LIGHT' ? 'border-zinc-300 bg-white/40' : 'border-zinc-700 bg-black/40'}`}
-              >
-                {/* Visual spokes */}
-                <div className="absolute inset-0 border-t-2 border-b-2 border-zinc-500/40 rounded-full" />
-                <div className="absolute inset-x-0 w-full h-0.5 bg-zinc-500/40 top-1/2 -translate-y-1/2" />
-                <div className="w-4 h-4 rounded-full bg-zinc-650/40 border-2 border-zinc-400/40" />
-              </motion.div>
-              <div className="absolute inset-0 m-auto w-1 h-1 bg-zinc-900 rounded-full" />
-            </div>
-
-            {/* Tape remaining window (connecting the two reels) */}
-            <div className={`h-8 w-20 border rounded relative flex items-center justify-center overflow-hidden ${colorMode === 'LIGHT' ? 'bg-slate-100/50 border-slate-300' : 'bg-black/30 border-white/5'}`}>
-              <span className="text-[7.5px] font-mono text-zinc-500 font-bold tracking-widest absolute top-0.5 text-center">TAPE</span>
-              
-              {/* Simulated brown magnet strip */}
-              <div className="h-2 w-full bg-amber-950/80 absolute bottom-1 flex items-center justify-center">
-                <span className={`h-0.5 ${isPlaying ? 'bg-amber-400 w-16 animate-pulse' : 'bg-transparent w-0'}`} />
-              </div>
-            </div>
-
-            {/* Spinning Reel Right */}
-            <div className="relative">
-              <motion.div 
-                animate={{ rotate: isPlaying ? 360 : 0 }}
-                transition={{ repeat: Infinity, duration: 4, ease: "linear" }}
-                className={`w-14 h-14 rounded-full border-4 border-dashed relative flex items-center justify-center ${colorMode === 'LIGHT' ? 'border-zinc-300 bg-white/40' : 'border-zinc-700 bg-black/40'}`}
-              >
-                {/* Visual spokes */}
-                <div className="absolute inset-0 border-t-2 border-b-2 border-zinc-500/40 rounded-full" />
-                <div className="absolute inset-x-0 w-full h-0.5 bg-zinc-500/40 top-1/2 -translate-y-1/2" />
-                <div className="w-4 h-4 rounded-full bg-zinc-650/40 border-2 border-zinc-400/40" />
-              </motion.div>
-              <div className="absolute inset-0 m-auto w-1 h-1 bg-zinc-900 rounded-full" />
->>>>>>> c81a0958240802c308a4ef1122d2b84cfb7cc5b4
             </div>
             
           </div>
 
-<<<<<<< HEAD
           {/* Trapezoidal tape protect bottom tab structure */}
           <div className="mx-6 h-4 border-t border-x rounded-t bg-stone-900/5 dark:bg-black/30 border-black/5 dark:border-zinc-900/30 flex items-center justify-between px-3 relative -mb-1 text-[7px] font-mono text-zinc-500 font-bold uppercase tracking-wider select-none">
             <span>◄◄ REV</span>
@@ -487,27 +411,12 @@ export const DeviceAudioPlayer: React.FC<DeviceAudioPlayerProps> = ({
             <div className="flex gap-1 items-center">
               <span className="text-zinc-500 text-right font-bold">READY</span>
               <span className="h-1.5 w-1.5 rounded-full bg-red-500 animate-pulse" />
-=======
-          {/* LED Signal Lamps */}
-          <div className="flex justify-between items-center px-2 text-[7.5px] font-mono">
-            <div className="flex gap-1.5 items-center">
-              <span className={`h-1.5 w-1.5 rounded-full ${isPlaying ? 'bg-emerald-500 animate-pulse' : 'bg-emerald-900'}`} />
-              <span className="text-zinc-500">PLAY</span>
-            </div>
-            
-            <span className="text-zinc-500 tracking-[0.1em] font-bold">120μS CRO2 CHROME</span>
-
-            <div className="flex gap-1.5 items-center">
-              <span className="text-zinc-500 text-right">STNDBY</span>
-              <span className="h-1.5 w-1.5 rounded-full bg-red-500" />
->>>>>>> c81a0958240802c308a4ef1122d2b84cfb7cc5b4
             </div>
           </div>
 
         </div>
 
         {/* TRACK DETAIL CONTENT & EQUALIZER VISUALIZER */}
-<<<<<<< HEAD
         <div className="flex-grow flex flex-col justify-between min-w-0 w-full">
           
           <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-3 min-w-0">
@@ -521,27 +430,11 @@ export const DeviceAudioPlayer: React.FC<DeviceAudioPlayerProps> = ({
               </h4>
               <p className="text-xs font-mono text-zinc-550 leading-relaxed max-w-sm mt-1 select-none">
                 Upload custom MP3 tapes or direct play lo-fi productivity focus presets.
-=======
-        <div className="flex-grow flex flex-col justify-between">
-          
-          <div className="flex items-start justify-between flex-wrap gap-2">
-            <div>
-              <span className="text-[9px] font-mono text-teal-600 uppercase font-black select-none tracking-widest">DEVICE AUDIO HUB</span>
-              <h4 className={`text-md font-sans font-bold leading-tight uppercase ${colorMode === 'LIGHT' ? 'text-zinc-900' : 'text-zinc-100'}`}>
-                {trackSourceType === "NONE" ? "No Soundtrack Loaded" : trackName}
-              </h4>
-              <p className="text-[9.5px] font-mono text-zinc-550 leading-relaxed max-w-sm mt-1">
-                Select your own focus audio tracks or MP3 recordings directly from your device storage, or use our pre-configured lo-fi focus synth presets.
->>>>>>> c81a0958240802c308a4ef1122d2b84cfb7cc5b4
               </p>
             </div>
 
             {/* EXPLICIT DEVICE UPLOAD BUTTON */}
-<<<<<<< HEAD
             <div className="flex flex-col gap-1.5 items-start sm:items-end shrink-0">
-=======
-            <div className="flex flex-col gap-1.5 items-end">
->>>>>>> c81a0958240802c308a4ef1122d2b84cfb7cc5b4
               <input 
                 ref={fileInputRef}
                 type="file" 
@@ -552,37 +445,22 @@ export const DeviceAudioPlayer: React.FC<DeviceAudioPlayerProps> = ({
               <button
                 id="btn-select-audio-device"
                 onClick={() => fileInputRef.current?.click()}
-<<<<<<< HEAD
                 className={`px-3 py-1.5 sm:px-4 sm:py-2 rounded-xl text-xs font-bold font-mono active:scale-95 transition-all flex items-center gap-2 shadow-md cursor-pointer ${
-=======
-                className={`px-3.5 py-1.5 rounded-lg text-[10px] font-bold font-mono active:scale-95 transition-all flex items-center gap-1.5 shadow-md cursor-pointer ${
->>>>>>> c81a0958240802c308a4ef1122d2b84cfb7cc5b4
                   colorMode === 'LIGHT'
                     ? 'bg-teal-600 hover:bg-teal-700 text-white shadow-teal-600/20'
                     : 'bg-teal-500/20 hover:bg-teal-500/35 text-teal-350 border border-teal-500/35 shadow-teal-500/5'
                 }`}
               >
-<<<<<<< HEAD
                 <FolderOpen className={`w-4 h-4 ${colorMode === 'LIGHT' ? 'text-white' : 'text-teal-400'}`} />
                 <span className="hidden sm:inline">SELECT AUDIO FROM DEVICE</span>
                 <span className="inline sm:hidden">SELECT AUDIO</span>
               </button>
               <span className="text-[10px] font-mono text-zinc-500 uppercase tracking-wider">Supports FLAC, MP3, WAV, M4A</span>
-=======
-                <FolderOpen className={`w-3.5 h-3.5 ${colorMode === 'LIGHT' ? 'text-white' : 'text-teal-400'}`} />
-                <span>SELECT AUDIO FROM DEVICE</span>
-              </button>
-              <span className="text-[8px] font-mono text-zinc-500 uppercase">Supports FLAC, MP3, WAV, M4A</span>
->>>>>>> c81a0958240802c308a4ef1122d2b84cfb7cc5b4
             </div>
           </div>
 
           {/* DYNAMIC EQUALIZER SPREAD */}
-<<<<<<< HEAD
           <div className={`p-2 rounded-xl border flex items-end justify-between h-11 my-2 ${subPanelBg}`}>
-=======
-          <div className={`p-2.5 rounded-xl border flex items-end justify-between h-14 my-2.5 ${subPanelBg}`}>
->>>>>>> c81a0958240802c308a4ef1122d2b84cfb7cc5b4
             {visualizerHeights.map((h, i) => (
               <div 
                 key={i} 
@@ -603,11 +481,7 @@ export const DeviceAudioPlayer: React.FC<DeviceAudioPlayerProps> = ({
             
             {/* Seeker slider input */}
             <div className="flex items-center gap-3">
-<<<<<<< HEAD
               <span className="text-xs font-mono text-zinc-500 tabular-nums">
-=======
-              <span className="text-[10px] font-mono text-zinc-500 tabular-nums">
->>>>>>> c81a0958240802c308a4ef1122d2b84cfb7cc5b4
                 {formatTime(currentTime)}
               </span>
               
@@ -618,17 +492,10 @@ export const DeviceAudioPlayer: React.FC<DeviceAudioPlayerProps> = ({
                 step="0.1"
                 value={currentTime}
                 onChange={handleSeek}
-<<<<<<< HEAD
                 className="flex-grow h-1.5 bg-zinc-300 dark:bg-zinc-800 rounded-lg outline-none accent-teal-500 cursor-pointer"
               />
 
               <span className="text-xs font-mono text-zinc-500 tabular-nums">
-=======
-                className="flex-grow h-1 bg-zinc-300 dark:bg-zinc-800 rounded-lg outline-none accent-teal-500 cursor-pointer"
-              />
-
-              <span className="text-[10px] font-mono text-zinc-500 tabular-nums">
->>>>>>> c81a0958240802c308a4ef1122d2b84cfb7cc5b4
                 {formatTime(duration)}
               </span>
             </div>
@@ -637,7 +504,6 @@ export const DeviceAudioPlayer: React.FC<DeviceAudioPlayerProps> = ({
             <div className="flex flex-wrap justify-between items-center gap-3 pt-1">
               
               {/* Transport Buttons */}
-<<<<<<< HEAD
               <div className="flex items-center gap-1.5">
                 {/* Skip back 10s */}
                 <button
@@ -646,43 +512,21 @@ export const DeviceAudioPlayer: React.FC<DeviceAudioPlayerProps> = ({
                   title="Rewind 10 Seconds"
                 >
                   <SkipBack className="w-4 h-4" />
-=======
-              <div className="flex items-center gap-1">
-                {/* Skip back 10s */}
-                <button
-                  onClick={handleSkipBackward}
-                  className={`p-1.5 rounded border transition-colors ${colorMode === 'LIGHT' ? 'bg-zinc-200 border-zinc-300 text-zinc-700 hover:text-black hover:bg-zinc-300' : 'bg-zinc-950 border-zinc-800 text-zinc-400 hover:text-white hover:bg-zinc-900'}`}
-                  title="Rewind 10 Seconds"
-                >
-                  <SkipBack className="w-3.5 h-3.5" />
->>>>>>> c81a0958240802c308a4ef1122d2b84cfb7cc5b4
                 </button>
 
                 {/* Main Play / Pause */}
                 <button
                   onClick={togglePlayPause}
-<<<<<<< HEAD
                   className={`px-5 py-2 rounded-xl text-xs font-sans tracking-widest uppercase font-black flex items-center gap-1.5 transition-colors shadow-sm ${isPlaying ? 'bg-amber-400 text-zinc-950 border border-amber-300 hover:bg-amber-400/90' : 'bg-teal-600 hover:bg-teal-700 text-white'}`}
                 >
                   {isPlaying ? (
                     <>
                       <Pause className="w-3.5 h-3.5 fill-zinc-950" />
-=======
-                  className={`px-4 py-1.5 rounded-lg text-[10px] font-mono tracking-widest uppercase font-extrabold flex items-center gap-1.5 transition-colors shadow ${isPlaying ? 'bg-amber-400 text-zinc-950 border border-amber-300 hover:bg-amber-400/90' : 'bg-teal-600 hover:bg-teal-700 text-white'}`}
-                >
-                  {isPlaying ? (
-                    <>
-                      <Pause className="w-3 h-3 fill-zinc-950" />
->>>>>>> c81a0958240802c308a4ef1122d2b84cfb7cc5b4
                       <span>PAUSE</span>
                     </>
                   ) : (
                     <>
-<<<<<<< HEAD
                       <Play className="w-3.5 h-3.5 fill-white text-white" />
-=======
-                      <Play className="w-3 h-3 fill-white text-white" />
->>>>>>> c81a0958240802c308a4ef1122d2b84cfb7cc5b4
                       <span>PLAY</span>
                     </>
                   )}
@@ -734,11 +578,7 @@ export const DeviceAudioPlayer: React.FC<DeviceAudioPlayerProps> = ({
                   title="Output Volume"
                 />
                 
-<<<<<<< HEAD
                 <span className="text-xs font-mono text-zinc-500 w-6 text-right tabular-nums">
-=======
-                <span className="text-[9px] font-mono text-zinc-500 w-6 text-right tabular-nums">
->>>>>>> c81a0958240802c308a4ef1122d2b84cfb7cc5b4
                   {isMuted ? "0" : volume}%
                 </span>
               </div>
@@ -753,11 +593,7 @@ export const DeviceAudioPlayer: React.FC<DeviceAudioPlayerProps> = ({
 
       {/* BUILT-IN PRODUCTIVITY SOUNDTRACK PRESETS BOX */}
       <div className={`mt-3 pt-3 border-t flex flex-col gap-2 ${colorMode === 'LIGHT' ? 'border-zinc-200' : 'border-zinc-900'}`}>
-<<<<<<< HEAD
         <span className="text-xs font-mono text-zinc-500 tracking-wider uppercase font-black">
-=======
-        <span className="text-[8px] font-mono text-zinc-500 tracking-wider uppercase font-black">
->>>>>>> c81a0958240802c308a4ef1122d2b84cfb7cc5b4
           FAST LOADING HIGH-PRODUCTIVITY SOUNDTRACK PRESETS
         </span>
 
@@ -775,11 +611,7 @@ export const DeviceAudioPlayer: React.FC<DeviceAudioPlayerProps> = ({
                 }`}
               >
                 <div className="flex justify-between items-start">
-<<<<<<< HEAD
                   <span className={`text-xs font-mono px-1 py-0.2 rounded font-extrabold uppercase ${
-=======
-                  <span className={`text-[7.5px] font-mono px-1 py-0.2 rounded font-extrabold uppercase ${
->>>>>>> c81a0958240802c308a4ef1122d2b84cfb7cc5b4
                     isActive ? 'bg-teal-500 text-white' : 'bg-teal-500/10 text-teal-600'
                   }`}>
                     {pst.category}
@@ -788,20 +620,12 @@ export const DeviceAudioPlayer: React.FC<DeviceAudioPlayerProps> = ({
                 </div>
 
                 <div className="mt-1">
-<<<<<<< HEAD
                   <h5 className={`text-xs font-bold truncate leading-tight uppercase ${
-=======
-                  <h5 className={`text-[10px] font-bold truncate leading-tight uppercase ${
->>>>>>> c81a0958240802c308a4ef1122d2b84cfb7cc5b4
                     isActive ? 'text-teal-600 dark:text-teal-400' : `${colorMode === 'LIGHT' ? 'text-zinc-800' : 'text-zinc-300'} group-hover:text-teal-500`
                   }`}>
                     {pst.name}
                   </h5>
-<<<<<<< HEAD
                   <p className="text-xs font-mono text-zinc-500 leading-tight line-clamp-1 mt-0.5">
-=======
-                  <p className="text-[8px] font-mono text-zinc-500 leading-tight line-clamp-1 mt-0.5">
->>>>>>> c81a0958240802c308a4ef1122d2b84cfb7cc5b4
                     {pst.desc}
                   </p>
                 </div>
