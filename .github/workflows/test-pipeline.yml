@@ -1,0 +1,19 @@
+name: BuildPulse Health Test
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ main ]
+
+jobs:
+  test-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Run Test Step
+        run: |
+          echo "Executing automated build pipeline..."
+          sleep 5
+          echo "Build complete!"
